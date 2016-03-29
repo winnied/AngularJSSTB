@@ -1,4 +1,8 @@
-# angular-seed — the seed for AngularJS apps
+# angular-seed — the seed for AngularJS apps - UPGRADED to book review app
+
+Made changes to the seed as I followed along with the Codeschool Soup to Bits screencast. Some of the bits in the video were different than what was in the repo that I cloned that was linked to in the video. I made some extra notes. The functionality of the application is all there but differs from what was shown in the walk-through. This Readme.md was originally from the angular-seed. I've only made changes to the actual file structure description thus far.
+
+## Original Seed Content
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
@@ -6,9 +10,6 @@ projects.
 
 The seed contains a sample AngularJS application and is preconfigured to install the Angular
 framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
-
 
 ## Getting Started
 
@@ -76,11 +77,16 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 
 
-## Directory Layout
+## Updated APP Directory Layout
 
 ```
 app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
+  css/
+    app.css             --> codeschool's styles from angularjssttb copied over
+    bootstrap.min.css   --> bootstrap included as instructed in walk through
+ 
+  js/
+    app.js              --> main application module
   components/           --> all app specific modules
     version/              --> version related components
       version.js                 --> version module declaration and basic "version" value service
@@ -89,17 +95,14 @@ app/                    --> all of the source files for the application
       version-directive_test.js  --> version directive tests
       interpolate-filter.js      --> custom interpolation filter
       interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
+  partials/           
+    app.html            --> most of the core html of the application moved into a partial
+    book-cover.html     --> book-cover element 
+    book-genres.html    --> book-genres element
+    books.js            --> the books data (not quite sure why this is also included, repeated within app.js)
+    form.html           --> form partial html
+    
   index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
   protractor-conf.js    --> Protractor config file
